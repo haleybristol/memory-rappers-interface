@@ -1,0 +1,19 @@
+%card-set {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  width: 209px;
+  border: 2px solid black;
+}
+
+%rap-card {
+  margin-top: 20px;
+  width: 150px;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-appearance: none;
+  outline: 0;
+  padding: 0;
+}

@@ -1,0 +1,155 @@
+@import 'layout/_mixins';
+
+body {
+    font-family: 'Cabin', sans-serif;
+}
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+h1 {
+  text-align: center;
+  font-weight: lighter;
+  font-family: 'Pacifico', cursive;
+}
+.card {
+    @extend %card-set;
+}
+
+nav {
+  display: flex;
+  a {
+    text-decoration: none;
+    color: black;
+    list-style: none;
+    padding: 20px;
+    }
+    .brand-logo {
+      flex: 3;
+      padding: 20px;
+    }
+
+}
+
+input#asap {
+    @extend %rap-card;
+}
+
+input#asap:checked {
+    background-image: url("../img/asap.jpg");
+}
+input#asap:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
+
+input#chainz {
+    @extend %rap-card;
+}
+input#chainz:checked {
+    background-image: url("../img/chainz.jpg");
+}
+input#chainz:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
+
+input#drake {
+    @extend %rap-card;
+}
+input#drake:checked {
+    background-image: url("../img/drake.png");
+}
+input#drake:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
+
+input#eminem {
+    @extend %rap-card;
+}
+input#eminem:checked {
+    background-image: url("../img/eminem.jpg");
+}
+input#eminem:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
+
+input#fetty {
+    @extend %rap-card;
+}
+input#fetty:checked {
+    background-image: url("../img/fetty.jpg");
+}
+input#fetty:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
+
+input#kanye {
+    @extend %rap-card;
+}
+input#kanye:checked {
+    background-image: url("../img/kanye.jpg");
+}
+input#kanye:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
+
+input#kendrick {
+    @extend %rap-card;
+}
+input#kendrick:checked {
+    background-image: url("../img/kendrick.jpg");
+}
+input#kendrick:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
+
+input#nicki {
+    @extend %rap-card;
+}
+input#nicki:checked {
+    background-image: url("../img/nicki.jpg");
+}
+input#nicki:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
+
+input#ocean {
+    @extend %rap-card;
+}
+input#ocean:checked {
+    background-image: url("../img/ocean.jpg");
+}
+input#ocean:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
+
+input#q {
+    @extend %rap-card;
+}
+input#q:checked {
+    background-image: url("../img/q.jpg");
+}
+input#q:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
+
+input#tyler {
+    @extend %rap-card;
+}
+input#tyler:checked {
+    background-image: url("../img/tyler.jpg");
+}
+input#tyler:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
+
+input#wayne {
+    @extend %rap-card;
+}
+input#wayne:checked {
+    background-image: url("../img/wayne.jpg");
+}
+input#wayne:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
