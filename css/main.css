@@ -9,6 +9,7 @@ input#asap, input#chainz, input#drake, input#eminem, input#fetty, input#kanye, i
   margin-top: 20px;
   width: 150px;
   height: 250px;
+  border-radius: 8px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -17,7 +18,8 @@ input#asap, input#chainz, input#drake, input#eminem, input#fetty, input#kanye, i
   padding: 0; }
 
 body {
-  font-family: 'Cabin', sans-serif; }
+  font-family: 'Cabin', sans-serif;
+  background-color: peachpuff; }
 
 .cards {
   display: flex;
@@ -27,7 +29,8 @@ body {
 h1 {
   text-align: center;
   font-weight: lighter;
-  font-family: 'Pacifico', cursive; }
+  font-family: 'Coming Soon', cursive;
+  color: white; }
 
 nav {
   display: flex; }
@@ -35,10 +38,17 @@ nav {
     text-decoration: none;
     color: black;
     list-style: none;
-    padding: 20px; }
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 16px 16px 0px 0px;
+    text-shadow: 1px 1px 1px 1px black;
+    background-color: #C0C6FA;
+    color: white; }
   nav .brand-logo {
     flex: 3;
-    padding: 20px; }
+    margin: 15px 0px 0px 18px;
+    color: white; }
 
 input#asap:checked {
   background-image: url("../img/asap.jpg"); }

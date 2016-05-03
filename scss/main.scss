@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Cabin', sans-serif;
+    background-color: peachpuff;
 }
 .cards {
     display: flex;
@@ -12,7 +13,8 @@ body {
 h1 {
   text-align: center;
   font-weight: lighter;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Coming Soon', cursive;
+  color: white;
 }
 .card {
     @extend %card-set;
@@ -24,11 +26,18 @@ nav {
     text-decoration: none;
     color: black;
     list-style: none;
-    padding: 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 16px 16px 0px 0px;
+    text-shadow: 1px 1px 1px 1px black;
+    background-color: #C0C6FA;
+    color: white;
     }
     .brand-logo {
       flex: 3;
-      padding: 20px;
+      margin: 15px 0px 0px 18px;
+      color: white;
     }
 
 }
