@@ -1,7 +1,7 @@
 # Rappers Who Cry
 
 ##Description
-This is an interface built for a memory card game. 
+This is an interface built for a matching card game. 
 
 ## Setup/Installation Requirements
 
