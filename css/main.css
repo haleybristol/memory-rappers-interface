@@ -1,8 +1,8 @@
 .card {
   background-size: cover;
   background-repeat: no-repeat;
-  height: 300px;
-  width: 209px;
+  height: 500px;
+  width: 300px;
   border: 2px solid black; }
 
 input#asap, input#chainz, input#drake, input#eminem, input#fetty, input#kanye, input#kendrick, input#nicki, input#ocean, input#q, input#tyler, input#wayne {
