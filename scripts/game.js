@@ -14,7 +14,7 @@ const createSelected = (cards = {}) => {
 const shuffleArray = arr => arr.sort(() => 0.5 - Math.random())
 
 /* Constants 𝌸 */
-const TOTAL_ATTEMPTS = 10
+const TOTAL_ATTEMPTS = 13
 const SHUFFLED_CARDS = shuffleArray(Object.keys(cards))
 const INIT_SELECTED = createSelected(cards)
 
