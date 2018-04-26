@@ -1,0 +1,6 @@
+.sass-cache/
+node_modules
+dist
+.vscode
+.cache
+.DS_Store

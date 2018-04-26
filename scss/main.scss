@@ -1,164 +1,270 @@
 @import 'layout/_mixins';
+@import url('https://fonts.googleapis.com/css?family=Niconne');
 
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 body {
-    font-family: 'Cabin', sans-serif;
-    background-color: peachpuff;
-}
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-
-}
-h1 {
-  text-align: center;
-  font-weight: lighter;
-  font-family: 'Coming Soon', cursive;
+  font-family: 'Niconne', sans-serif;
+  background-color: peachpuff;
+  margin: 0;
+  opacity: 0;
+  animation: fadeIn 1s ease;
+  animation-fill-mode: forwards;
   color: white;
 }
-.card {
-    @extend %card-set;
+h2 {
+  text-align: center;
 }
 
 nav {
+  height: 80px;
   display: flex;
-  a {
-    text-decoration: none;
-    color: black;
-    list-style: none;
-    border: 2px solid white;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 16px 16px 0px 0px;
-    text-shadow: 1px 1px 1px 1px black;
-    background-color: #C0C6FA;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 95%;
+  margin: auto;
+  z-index: 2;
+  position: relative;
+  h1 {
+    margin: 0;
+    font-size: 50px;
+  }
+}
+
+.no-show {
+  visibility: hidden;
+  position: fixed;
+  left: 9999px;
+}
+.shadow {
+  text-shadow: 1px 1px 2px hsla(0, 3%, 27%, 0.88);
+  transition: text-shadow 0.4s ease;
+  &:hover {
+    text-shadow: 1px 1px 2px hsla(0, 3%, 27%, 0.98);
+  }
+}
+.full-height {
+  height: 100vh;
+}
+.cards {
+  // Sizing
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 15.6%);
+  grid-gap: 2vmin;
+  height: calc(100% - 80px);
+
+  @media only screen and (min-width: 900px) and (min-device-width: 900px) {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 25%);
+  }
+
+  padding: 10px;
+  // margin: auto;
+  // max-width: 95%;
+
+  z-index: 2;
+  position: relative;
+}
+
+.card {
+  @extend %card-set;
+}
+
+input {
+  @extend %rap-card;
+  &#asap:checked {
+    background-image: url('../img/asap.jpg');
+  }
+  &#chainz:checked {
+    background-image: url('../img/chainz.jpg');
+  }
+  &#drake:checked {
+    background-image: url('../img/drake.png');
+  }
+  &#eminem:checked {
+    background-image: url('../img/eminem.jpg');
+  }
+  &#fetty:checked {
+    background-image: url('../img/fetty.jpg');
+  }
+  &#kanye:checked {
+    background-image: url('../img/kanye.jpg');
+  }
+
+  &#kendrick:checked {
+    background-image: url('../img/kendrick.jpg');
+  }
+
+  &#nicki:checked {
+    background-image: url('../img/nicki.jpg');
+  }
+
+  &#ocean:checked {
+    background-image: url('../img/ocean.jpg');
+  }
+
+  &#q:checked {
+    background-image: url('../img/q.jpg');
+  }
+
+  &#tyler:checked {
+    background-image: url('../img/tyler.jpg');
+  }
+
+  &#wayne:checked {
+    background-image: url('../img/wayne.jpg');
+  }
+  &#post:checked {
+    background-image: url('../img/post.jpg');
+  }
+  &#quavo:checked {
+    background-image: url('../img/quavo.jpg');
+  }
+  &#pump:checked {
+    background-image: url('../img/pump.jpg');
+  }
+}
+
+input:not(:checked) {
+  background-image: url('../img/i-feel-like-crying.jpg');
+}
+
+.welcome {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+  opacity: 0;
+  animation: fadeIn2 1s ease;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  button {
     color: white;
+    background: transparent;
+    box-shadow: none;
+    border: 0;
+    font-family: inherit;
+    font-size: 27px;
+    padding: 20px 40px;
+  }
+  h1 {
+    font-size: 50px;
+    text-shadow: 1px 1px 2px hsla(0, 3%, 27%, 0);
+    background: #f8c5c7;
+    padding: 10px;
+    &:hover {
+      cursor: pointer;
+      text-shadow: 1px 1px 2px hsla(0, 3%, 27%, 0.28);
     }
-    .brand-logo {
-      flex: 3;
-      margin: 15px 0px 0px 18px;
-      color: white;
-    }
-
+  }
 }
 
-input#asap {
-    @extend %rap-card;
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-size: 200px;
+  background-position: center;
+  background-color: #c0c7f5;
+  background-image: url('../img/drake-cloud.gif');
+  opacity: 1;
 }
 
-input#asap:checked {
-    background-image: url("../img/asap.jpg");
-}
-input#asap:not(:checked) {
-    background-image: url("../img/logo.jpg");
-}
-
-input#chainz {
-    @extend %rap-card;
-}
-input#chainz:checked {
-    background-image: url("../img/chainz.jpg");
-}
-input#chainz:not(:checked) {
-    background-image: url("../img/logo.jpg");
+.fadeIn {
+  opacity: 0;
+  animation: fadeIn 2s ease;
+  animation-fill-mode: forwards;
 }
 
-input#drake {
-    @extend %rap-card;
-}
-input#drake:checked {
-    background-image: url("../img/drake.png");
-}
-input#drake:not(:checked) {
-    background-image: url("../img/logo.jpg");
-}
-
-input#eminem {
-    @extend %rap-card;
-}
-input#eminem:checked {
-    background-image: url("../img/eminem.jpg");
-}
-input#eminem:not(:checked) {
-    background-image: url("../img/logo.jpg");
+.slideshow {
+  background-size: cover;
+  height: 100vh;
+  opacity: 0.9;
+  z-index: 1;
+  position: absolute;
+  width: 100vw;
+  animation: slides 40s ease infinite;
 }
 
-input#fetty {
-    @extend %rap-card;
-}
-input#fetty:checked {
-    background-image: url("../img/fetty.jpg");
-}
-input#fetty:not(:checked) {
-    background-image: url("../img/logo.jpg");
-}
-
-input#kanye {
-    @extend %rap-card;
-}
-input#kanye:checked {
-    background-image: url("../img/kanye.jpg");
-}
-input#kanye:not(:checked) {
-    background-image: url("../img/logo.jpg");
+.loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  width: 100vw;
+  background: peachpuff;
+  img {
+    height: 150px;
+  }
 }
 
-input#kendrick {
-    @extend %rap-card;
-}
-input#kendrick:checked {
-    background-image: url("../img/kendrick.jpg");
-}
-input#kendrick:not(:checked) {
-    background-image: url("../img/logo.jpg");
+@keyframes slides {
+  0% {
+    background-image: url('https://media.giphy.com/media/w8PXuQ7zlCB0166DqC/giphy.gif');
+  }
+  10% {
+    background-image: url('https://media.giphy.com/media/5xaOcLDE64VMF4LqqrK/giphy.gif');
+  }
+  20% {
+    background-image: url('https://media.giphy.com/media/kFQLHONw5cZfW/giphy.gif');
+  }
+  30% {
+    background-image: url('https://media.giphy.com/media/RLzA0bZ3pdzkk/giphy.gif');
+  }
+  40% {
+    background-image: url('https://media.giphy.com/media/OagJJtkDl2aFa/giphy.gif');
+  }
+  50% {
+    background-image: url('https://media.giphy.com/media/3oEhmM7zey4XTxlz8Y/giphy.gif');
+  }
+  60% {
+    background-image: url('https://media.giphy.com/media/3o6wrkrgZamyNZgiJy/giphy.gif');
+  }
+  70% {
+    background-image: url('https://media.giphy.com/media/13lQF6QMW4aMHC/giphy.gif');
+  }
+
+  80% {
+    background-image: url('https://media.giphy.com/media/l0Iy7v5d86tHaDJJu/giphy.gif');
+  }
+
+  90% {
+    background-image: url('https://media.giphy.com/media/l0HTZjju2BFDbuJnq/giphy.gif');
+  }
+  100% {
+    background-image: url('https://media.giphy.com/media/3o751Vcv2TyZgMUOA0/giphy.gif');
+  }
 }
 
-input#nicki {
-    @extend %rap-card;
-}
-input#nicki:checked {
-    background-image: url("../img/nicki.jpg");
-}
-input#nicki:not(:checked) {
-    background-image: url("../img/logo.jpg");
-}
-
-input#ocean {
-    @extend %rap-card;
-}
-input#ocean:checked {
-    background-image: url("../img/ocean.jpg");
-}
-input#ocean:not(:checked) {
-    background-image: url("../img/logo.jpg");
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-input#q {
-    @extend %rap-card;
-}
-input#q:checked {
-    background-image: url("../img/q.jpg");
-}
-input#q:not(:checked) {
-    background-image: url("../img/logo.jpg");
-}
-
-input#tyler {
-    @extend %rap-card;
-}
-input#tyler:checked {
-    background-image: url("../img/tyler.jpg");
-}
-input#tyler:not(:checked) {
-    background-image: url("../img/logo.jpg");
-}
-
-input#wayne {
-    @extend %rap-card;
-}
-input#wayne:checked {
-    background-image: url("../img/wayne.jpg");
-}
-input#wayne:not(:checked) {
-    background-image: url("../img/logo.jpg");
+@keyframes fadeIn2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
